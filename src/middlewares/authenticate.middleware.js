@@ -46,7 +46,7 @@ const authMiddleware = async ( req, res, next ) => {
         });
     }
 
-    req.holaatodos = 'Hola Terricolas despierten'
+    req.userFound = userFound;   // Guardar el usuario encontrado en la request para que pueda ser usado en los controladores
 
     console.log( 'userFound', userFound );
 
