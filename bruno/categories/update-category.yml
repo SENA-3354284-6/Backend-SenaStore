@@ -5,14 +5,10 @@ info:
 
 http:
   method: PATCH
-  url: "{{baseUrl}}/api/categories/:id"
+  url: http://localhost:3000/api/categories/6ad798333f449dd0fdbcf25b
   headers:
     - name: Content-Type
       value: application/json
-  params:
-    - name: id
-      value: ID_AQUI
-      type: path
   body:
     type: json
     data: |
@@ -20,3 +16,10 @@ http:
         "name": "Tecnologia y Electronica",
         "description": "Articulos tecnologicos y electronicos actualizados"
       }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

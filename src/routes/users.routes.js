@@ -1,12 +1,13 @@
 import { Router } from "express";
 import { createUser, deleteUser, getUsers, getUser, updateUser } from "../controllers/users.controllers.js";
+import { authMiddleware } from "../middlewares/authenticate.middleware.js";
 
 
 // Crea una instancia de las rutas de Express
 const router = Router();    
 
 // Define las rutas para los usuarios
-router.post( '/', createUser );         // 1. Registro Privado (Role: Administrador), va a poder asignar el rol
+router.post( '/', authMiddleware, createUser );         // 1. Registro Privado (Role: Administrador), va a poder asignar el rol
 
 // Ruta GET con soporte para paginación y filtro de estado mediante Query Strings
 // Ejemplos de consumo:
@@ -15,11 +16,11 @@ router.post( '/', createUser );         // 1. Registro Privado (Role: Administra
 //   - GET /api/users?status=false                 (Solo usuarios inactivos)
 //   - GET /api/users?status=all                   (Todos los usuarios sin distingo de estado)
 //   - GET /api/users?page=2&limit=5&status=all    (Paginado combinado con filtro de estado)
-router.get( '/', getUsers );
+router.get( '/', authMiddleware, getUsers );
 
-router.delete( '/:id', deleteUser );
-router.patch( '/:id', updateUser );
-router.get( '/:id', getUser );
+router.delete( '/:id', authMiddleware, deleteUser );
+router.patch( '/:id', authMiddleware, updateUser );
+router.get( '/:id', authMiddleware, getUser );
 
 
 // Exportar las rutas definidas en este archivo

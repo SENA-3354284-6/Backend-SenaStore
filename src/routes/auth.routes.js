@@ -4,6 +4,7 @@ import { loginUser, verifyAuthenticate } from '../controllers/auth.controllers.j
 
 import { authMiddleware } from '../middlewares/authenticate.middleware.js';
 import { authorizationMiddleware } from '../middlewares/authorization.middleware.js';
+import withoutRoleMiddleware from '../middlewares/without-role.middleware.js';
 
 // Crea una instancia de las rutas de Express
 const router = Router();
@@ -11,7 +12,7 @@ const router = Router();
 // Define las rutas para la autenticacion
 
 // 1. Registro publico de usuarios (default: CUSTOMER) Middleware asegurarme que solo se registre CUSTOMER
-router.post( '/register', createUser );  // TODO: Filtremos que solo puedan registrarse usuarios con rol CUSTOMER, para eso debemos crear un middleware que valide el rol del usuario que se esta registrando  
+router.post( '/register', withoutRoleMiddleware, createUser ); 
 
 // 2. Login de usuarios
 router.post( '/login', loginUser );

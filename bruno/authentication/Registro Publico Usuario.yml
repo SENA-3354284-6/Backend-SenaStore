@@ -13,7 +13,7 @@ http:
         "name": "Dilan",
         "email": "dilan@correo.co",
         "password": "123456789",
-        "role": "SELLER",
+        "role": "ADMIN",
         "status": true
       //   "createdBy": "6ad79c0a9f063bd26d7f0c2b"
       }
