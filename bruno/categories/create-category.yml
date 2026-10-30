@@ -9,14 +9,14 @@ http:
   headers:
     - name: Content-Type
       value: application/json
+    - name: X-Token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YWUzODhmMTg2Y2RhYjU0YjkyMTE1N2IiLCJuYW1lIjoiRnJhbmsgTWFydGluZXoiLCJlbWFpbCI6ImZyYW5rLm1hcnRpbmV6QGNvcnJlby5jbyIsInJvbGUiOiJDVVNUT01FUiIsInN0YXR1cyI6dHJ1ZSwiaWF0IjoxNzkzMzg0NDQ5LCJleHAiOjE3OTMzODgwNDl9.jKvuILYrVc115EPwsjXgE7dKmW_U19UhnXleRHsYJRI
   body:
     type: json
     data: |
       {
-        "name": "Salud",
-        "description": "Articulos y dispositivos tecnologicos",
-        "status": true,
-        "createdBy": "6ad7975c3f449dd0fdbcf258"
+        "name": "Electrodomesticos",
+        "description": "Articulos de las diferentes marcas para el aseo del hogar"
       }
 
 settings:

@@ -2,8 +2,12 @@ import { dbCreateCategory, dbDeleteCategory, dbGetCategories, dbGetCategory, dbU
 
 const createCategory = async ( req, res ) => {
     try {
+        // Extrae el ID del usuario encontrado por el Middleware de Autenticacion
+        const { _id } = req.userFound;
+
         // Extrae los datos del cuerpo de la peticion
         const inputData = req.body;
+        inputData.createdBy = _id;    // <--- Agrega el ID del usuario que registra la categoria 
     
         // Usar el servicio para registrar
         const data = await dbCreateCategory( inputData );

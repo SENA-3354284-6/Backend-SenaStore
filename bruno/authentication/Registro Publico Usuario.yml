@@ -10,12 +10,12 @@ http:
     type: json
     data: |-
       {
-        "name": "Dilan",
-        "email": "dilan@correo.co",
+        "name": "Paula",
+        "email": "paula@correo.co",
         "password": "123456789",
-        "role": "ADMIN",
-        "status": true
-      //   "createdBy": "6ad79c0a9f063bd26d7f0c2b"
+        "role": "ADMIN"
+        //"status": true
+        //   "createdBy": "6ad79c0a9f063bd26d7f0c2b"
       }
   auth: inherit
 

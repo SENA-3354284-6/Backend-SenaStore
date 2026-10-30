@@ -4,8 +4,15 @@ import { generatePassword } from "../helpers/bcrypt.helpers.js";
 
 const createUser = async (req, res) => {
     try {
+        // Extrae el _id del userFound usando una desestructuración del payload que envia en la peticion (req) el Middleware de Autenticacion
+        const userFound = req.userFound;
+
+        // Usa un operador ternario para asignar el valor de _id a la variable id, o null si no existe
+        const id = userFound?._id ? userFound._id : null;
+
         // Extrae los datos del cuerpo de la petición
         const inputData = req.body;
+        inputData.createdBy = id;
 
         // Encripte la contraseña antes de guardarla en la base de datos (opcional, pero recomendado)
         inputData.password = generatePassword(inputData.password);

@@ -9,16 +9,18 @@ http:
   headers:
     - name: Content-Type
       value: application/json
+    - name: X-Token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YWUzODhmMTg2Y2RhYjU0YjkyMTE1N2IiLCJuYW1lIjoiRnJhbmsgTWFydGluZXoiLCJlbWFpbCI6ImZyYW5rLm1hcnRpbmV6QGNvcnJlby5jbyIsInJvbGUiOiJDVVNUT01FUiIsInN0YXR1cyI6dHJ1ZSwiaWF0IjoxNzkzMzc0ODYzLCJleHAiOjE3OTMzNzg0NjN9.YC4L9gMbvw5ubL3XbiFhWzVeCT6UdcfIpd6ax_ud8cc
   body:
     type: json
     data: |
       {
-        "name": "RGB",
-        "description": "Teclado mecanico para desarrollo y gaming",
-        "price": 120000,
-        "stock": 15,
-        "state": "disponible",
-        "category": "6ad798333f449dd0fdbcf25b"
+        "name": "Cepillo de Dientes Colgate",
+        "description": "El cepillo mas poderoso del mercado",
+        "price": 3,
+        "stock": 50,
+        //"state": "disponible",
+        "category": "6ae4bb34b91276b07fffe5e4"
       }
 
 settings:

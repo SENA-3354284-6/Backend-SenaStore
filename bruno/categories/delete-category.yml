@@ -5,11 +5,16 @@ info:
 
 http:
   method: DELETE
-  url: "{{baseUrl}}/api/categories/:id"
+  url: http://localhost:3000/api/categories/6ad7975c3f449dd0fdbcf258
   headers:
     - name: Accept
       value: application/json
-  params:
-    - name: id
-      value: ID_AQUI
-      type: path
+    - name: X-Token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YWUwZDVkNGFhM2YwODY2ZWIwODQyNWMiLCJuYW1lIjoiQnJheWFuIENvcnBhIiwiZW1haWwiOiJicmF5YW5jb3JwYUBjb3JyZW8uY28iLCJyb2xlIjoiU0VMTEVSIiwic3RhdHVzIjp0cnVlLCJpYXQiOjE3OTMyOTQwMTAsImV4cCI6MTc5MzI5NzYxMH0.3TUvZQK8cFGdKZ2Zzzy8y_qrEvNeQdLm97nBZaY5hJ4
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
