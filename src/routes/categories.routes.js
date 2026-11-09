@@ -11,12 +11,20 @@ const router = Router();
 // Define las rutas para las categorias
 router.post( 
     '/',                                                                // Ruta
-    [ authMiddleware, authorizationMiddleware(['ADMIN','SELLER']) ],    // Lista de Middlewares next()
+    [ authMiddleware, authorizationMiddleware(['ADMIN']) ],    // Lista de Middlewares next()
     createCategory                                                      // Controlador
 );
 router.get( '/', getCategories );
-router.delete( '/:id', authMiddleware, deleteCategory );
-router.patch( '/:id', authMiddleware, updateCategory );
+router.delete( 
+    '/:id', 
+    authMiddleware, authorizationMiddleware(['ADMIN']), 
+    deleteCategory 
+);
+router.patch( 
+    '/:id', 
+    authMiddleware, authorizationMiddleware(['ADMIN','SELLER']), 
+    updateCategory 
+);
 router.get( '/:id', authMiddleware, getCategory );
 
 
